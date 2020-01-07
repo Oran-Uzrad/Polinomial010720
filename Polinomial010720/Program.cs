@@ -9,13 +9,19 @@ namespace Polinomial010720
             int[] cArr = new int[10];
             int l = ReadCoefficients(cArr);
             int x = ReadInt("Enter X: ");
+            Console.WriteLine("Result: {0}", CalcPoli(cArr , l , x));
+        }
+
+        public static int CalcPoli(int[] coff, int l, int x)
+        {
             int poli = 0;
             for (int i = 0; i < l; i++)
             {
-                poli = poli + cArr[i] * MyPow(x, i);
+                poli = poli + coff[i] * MyPow(x, i);
             }
-            Console.WriteLine("Result: {0}", poli);
+            return poli;
         }
+
 
         public static int MyPow(int a, int b)
         {
